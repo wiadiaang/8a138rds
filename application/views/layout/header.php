@@ -1,8 +1,9 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-
+		<!-- Required meta tags --> 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta charset="UTF-8"/>
 		<meta name="apple-mobile-web-app-capable" content="yes"/>
 		<meta name="mobile-web-app-capable" content="yes"/>
@@ -15,105 +16,64 @@
 		<meta name="googlebot" content="index, follow"/>
 		<meta name="google" content="notranslate"/>
 
-		<meta name="viewport" content="width=1160"/>
-
-		<title><?php echo $page_title ?> - IARU The 50th Anniversary</title>
-		<link rel="icon" type="image/png" href="<?php echo base_url();?>assets/img/icon.png"/>
-
-		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/swiper.css"/>
-		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/normal.css"/>
-		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/header.css"/>
-		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/<?php echo $css ?>"/>
-		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/table.css"/>
-		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/footer.css"/>
-
-		<script src="<?php echo base_url();?>assets/js/jquery.js"></script>
-		<script src="<?php echo base_url();?>assets/js/swiper.js"></script>
-		<script src="<?php echo base_url();?>assets/js/index.js"></script>
-
+		<title><?php echo $page_title ?> 8a138rds</title>
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/vendors/mdi/css/materialdesignicons.min.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/vendors/owl.carousel/css/owl.carousel.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/vendors/owl.carousel/css/owl.theme.default.min.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/vendors/aos/css/aos.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/vendors/jquery-flipster/css/jquery.flipster.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css">
+		<link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+		
+		<link rel="shortcut icon" href="<?php echo base_url();?>assets/images/favicon.png" />
 		<style>
 		.pdfobject-container {height: 500px}
 		.pdfobject {border: 1px solid #666}
 		</style>
-
 	</head>
+
 
 	<body>
 
-		<main>
-
-		<div id="centered">
-
-		<header>
-			
-			<div id="box">
-				<div class="left">
-
-					<a href="<?php echo base_url();?>"><img class="logo" src="<?php echo base_url();?>assets/img/logo.png"/></a>
-
-					<div>
-
-						<span>
-
-							<b>The IARU Region 3 - 50<sup>th</sup> Anniversary</b>
-							International Amateur Radio Union<br/>
-							Region 3 (Asia Pacific Region)
-							
-
-						</span>
-
-						<ul>
-							<!-- <li><a href="<?php echo base_url();?>">Home</a></li> -->
-							<!-- <li><a href="#">Statistic</a></li> -->
-							<!-- <li><a href="<?php echo site_url('result'); ?>">QSO Summary</a></li> -->
-							<!-- <li><a href="#">QSO Summary</a></li> -->
-							<li class="bLogin"><a target="_blank" href="<?php echo base_url();?>user/login">Login</a></li>
-							<li><a href="<?php echo site_url('home/rules');?>">Award Rules</a></li>
-							<li><a href="<?php echo site_url('counting');?>">World Ranking</a></li>
-							<li><a href="<?php echo site_url('home/station_summary');?>">Station Summary</a></li>
-							<li><a href="<?php echo site_url('home/award_list');?>">Award List</a></li>
-
-						</ul>
-
+	<body data-spy="scroll" data-target=".navbar" data-offset="50">
+	<div id="mobile-menu-overlay"></div>
+	    <nav class="navbar navbar-expand-lg fixed-top">
+			<div class="container">
+				<a class="navbar-brand" href="#"><img src="<?php echo base_url();?>assets/images/logo.png" alt="raden-dewi-sartika"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"><i class="mdi mdi-menu"> </i></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+					<div class="d-lg-none d-flex justify-content-between px-4 py-3 align-items-center">
+						<img src="<?php echo base_url();?>assets/images/logo-dark.svg" class="logo-mobile-menu" alt="logo">
+						<a href="javascript:;" class="close-menu"><i class="mdi mdi-close"></i></a>
 					</div>
-
+					<ul class="navbar-nav ml-auto align-items-center">
+						<li class="nav-item active">
+							<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+						</li>
+				
+						<li class="nav-item">
+							<a class="nav-link" href="#award">Award rules</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#rangking">Rangking</a>
+						</li>
+						<!-- <li class="nav-item">
+							<a class="nav-link" href="#testimonial">Testimonial</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#plans">Plans</a>
+						</li> -->
+						<!-- <li class="nav-item">
+							<a class="nav-link btn btn-success" href="#contact">174-394-9560</a>
+						</li> -->
+					</ul>
 				</div>
-
-				<div class="right">
-
-					
-					<form method="post" action="<?php echo site_url('search'); ?>" target="_blank">
-
-						<label for="search2">Log Search</label>
-						<img src="<?php echo base_url();?>assets/img/user.png"/>
-						<input type="text" id="search2" required="true" value="" name="callsign" placeholder="your callsign"
-						autocomplete="off" spellcheck="false"/>
-						<button type="submit">Search</button>
-
-					</form>
-
-					<form action="<?php echo site_url('search2/award/');?>" method="POST">
-
-						<label for="search1">Award Check</label>
-						<img src="<?php echo base_url();?>assets/img/certificate.png"/>
-						<input type="text" id="search1" name="callsign" placeholder="your callsign"
-						autocomplete="off" spellcheck="false"/>
-						<button type="submit">Search</button>
-
-					</form>
-
-					<form action="<?php echo site_url('search/certificate_operator/');?>" method="POST">
-
-						<label for="search1">Certificate</label>
-						<img src="<?php echo base_url();?>assets/img/certificate.png"/>
-						<input type="text" id="search1" name="callsign" placeholder="operator callsign"
-						autocomplete="off" spellcheck="false"/>
-						<button type="submit">Search</button>
-
-					</form>
-
-				</div>
-
 			</div>
+		</nav>
 
-		</header>
+		
+
+		
+
