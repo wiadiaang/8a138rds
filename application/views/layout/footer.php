@@ -100,7 +100,17 @@
 		<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 		<script>
 			$(document).ready(function () {
-				$('#example').DataTable({
+				$('#indonesia').DataTable({
+					lengthMenu: [
+						[10, 25, 50, -1],
+						[10, 25, 50, 'All'],
+					],
+				});
+			});
+		</script>
+		<script>
+			$(document).ready(function () {
+				$('#dx').DataTable({
 					lengthMenu: [
 						[10, 25, 50, -1],
 						[10, 25, 50, 'All'],
@@ -109,6 +119,7 @@
 			});
 		</script>
 		
+			<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 	</body>
 </html>

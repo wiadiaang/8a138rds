@@ -20,11 +20,11 @@
 		<title>Login - IARU - 50th Anniversary</title>
 
 		<link rel="icon" type="image/png" href="<?php echo base_url();?>assets/img/icon.png"/>
-		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/normal.css"/>
-		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/login.css"/>
+		<link rel="stylesheet" href="<?php echo base_url();?>asset/css/normal.css"/>
+		<link rel="stylesheet" href="<?php echo base_url();?>asset/css/login.css"/>
 
-		<script src="<?php echo base_url();?>assets/js/jquery.js"></script>
-		<script src="<?php echo base_url();?>assets/js/index.js"></script>
+		<script src="<?php echo base_url();?>asset/js/jquery.js"></script>
+		<script src="<?php echo base_url();?>asset/js/index.js"></script>
 
 	</head>
 
@@ -34,19 +34,19 @@
 
 			<div id="box">
 
-				<img src="<?php echo base_url();?>assets/img/logo-login.png"/>
+				<img src="http://localhost:8003/8a138rds/assets/images/rds-besar-png.png"/>
 
 				<span class="title">Login Member</span>
 
 				<form action="<?php echo site_url('user/login'); ?>" method="POST" name="users">
 
 					<label>Username</label>
-					<img src="<?php echo base_url();?>assets/img/user.png"/>
+					<img src="<?php echo base_url();?>asset/img/user.png"/>
 					<input type="text" name="user_name" autocomplete="off" spellcheck="false"
 					placeholder="your username" value="<?php echo $this->input->post('user_name'); ?>" required/>
 
 					<label>Password</label>
-					<img src="<?php echo base_url();?>assets/img/password.png"/>
+					<img src="<?php echo base_url();?>asset/img/password.png"/>
 					<input type="password" name="user_password" placeholder="your password" required/>
  					<input type="hidden" name="id" value="<?php echo $this->uri->segment(3); ?>" />
 

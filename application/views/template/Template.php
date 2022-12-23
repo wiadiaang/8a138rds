@@ -58,7 +58,7 @@
 <div class="wrapper">
     <!-- Navbar-->
     <header class="main-header-top hidden-print" style="background: #fff;">
-         <a href="#" class="logo"><img style="height: 40px;" class="img-fluid able-logo" src="<?php echo base_url();?>assets/img/logo.png" alt="Theme-logo"></a> 
+         <a href="#" class="logo"><img style="height: 40px;" class="img-fluid able-logo" src="<?php echo base_url();?>assets/images/logo-dark.png" alt="Theme-logo"></a> 
         <nav class="navbar navbar-static-top" style="background: #CC1B22;">
             <!-- Sidebar toggle button--><a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
             <!-- Navbar Right Menu-->
