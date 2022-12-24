@@ -118,6 +118,16 @@
 				});
 			});
 		</script>
+		<script>
+			$(document).ready(function () {
+				$('#qso').DataTable({
+					lengthMenu: [
+						[10, 25, 50, -1],
+						[10, 25, 50, 'All'],
+					],
+				});
+			});
+		</script>
 		
 			<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 

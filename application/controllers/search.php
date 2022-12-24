@@ -5,24 +5,11 @@ class Search extends CI_Controller {
 	public function index()
 	{
         ini_set('memory_limit', '-1');
-        // Auth check
-        $this->load->model('user_model');
-        if(!$this->user_model->authorize($this->config->item('auth_mode'))) {
-            if($this->user_model->validate_session()) {
-                $this->user_model->clear_session();
-                show_error('Access denied<p>Click <a href="'.site_url('user/login').'">here</a> to log in as another user', 403);
-            } else {
-                redirect('user/login');
-            }
-        }
         $this->load->model('logbook_model');
         $call = $this->input->post('callsign');
-        $rows = $this->logbook_model->get_count_data_by_call($call);
-        $data['jml'] = $rows;
-
-		$data['page_title'] = "Search";
-        $data['css'] = '';
-
+        $data['hasil'] = $this->logbook_model->get_search($call);
+        $data['callsign'] = $call; 
+        $data['page_title'] =  $call;
         $this->load->view('layout/header', $data);
 		$this->load->view('search/main',$data);
 		$this->load->view('layout/footer');
@@ -31,24 +18,10 @@ class Search extends CI_Controller {
     function get_log($call)
     {
         ini_set('memory_limit', '-1');
-        // Auth check
-        $this->load->model('user_model');
-        // if(!$this->user_model->authorize($this->config->item('auth_mode'))) {
-        //     if($this->user_model->validate_session()) {
-        //         $this->user_model->clear_session();
-        //         show_error('Access denied<p>Click <a href="'.site_url('user/login').'">here</a> to log in as another user', 403);
-        //     } else {
-        //         redirect('user/login');
-        //     }
-        // }
         $this->load->model('logbook_model');
-        $call = $this->input->post('callsign');
-        $rows = $this->logbook_model->get_count_data_by_call($call);
-        $data['jml'] = $rows;
-
-		$data['page_title'] = "Search";
-        $data['css'] = '';
-
+        $data['page_title'] =  $call ;
+        $data['hasil'] = $this->logbook_model->get_search($call);
+        $data['callsign'] = $call; 
         $this->load->view('layout/header', $data);
 		$this->load->view('search/main',$data);
 		$this->load->view('layout/footer');

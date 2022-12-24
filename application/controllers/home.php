@@ -16,9 +16,10 @@ class Home extends CI_Controller {
 		$data['page_title'] = "Home";
 		$data['css'] = 'index.css';
 
-		$data['rangking'] = $this->logbook_model->rangking();
-		$data['callrangking'] = $this->logbook_model->get_sepuluh_terbaik();
-		$data['operator'] =  $this->logbook_model->get_all_operator();
+		$data['ybland'] = $this->logbook_model->get_ybland_rangking();
+		$data['dxchasser'] = $this->logbook_model->get_dx_rangking();
+		
+
 
 		$this->load->view('layout/header',$data);
 		$this->load->view('home/index2',$data);

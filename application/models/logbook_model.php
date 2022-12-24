@@ -1962,6 +1962,32 @@ class Logbook_model extends CI_Model {
           return $query;
         }
 
+        public function get_ybland_rangking()
+        {
+            $query = $this->db->query("SELECT COL_CALL,SUM(CASE WHEN COL_MODE='CW' THEN 5 WHEN COL_MODE='SSB' THEN 3 WHEN COL_MODE='FT8' THEN 1 ELSE 0 END) AS nilai,
+                                       SUM(CASE WHEN COL_MODE='CW'  THEN 1 WHEN COL_MODE='SSB' THEN 1 WHEN COL_MODE='FT8' THEN 1 ELSE 0 END) AS qso, 
+                                       COUNT(DISTINCT COL_BAND) AS COL_BAND, COUNT(DISTINCT COL_MODE) AS COL_MODE
+                                       FROM `view_qso`    WHERE COL_CALL  LIKE 'Y%'  GROUP BY COL_CALL ORDER BY nilai DESC")->result();
+
+            return $query;
+        }
+        public function get_dx_rangking()
+        {
+            $query = $this->db->query("SELECT COL_CALL,SUM(CASE WHEN COL_MODE='CW' THEN 5 WHEN COL_MODE='SSB' THEN 3 WHEN COL_MODE='FT8' THEN 1 ELSE 0 END) AS nilai,
+                                       SUM(CASE WHEN COL_MODE='CW'  THEN 1 WHEN COL_MODE='SSB' THEN 1 WHEN COL_MODE='FT8' THEN 1 ELSE 0 END) AS qso, 
+                                       COUNT(DISTINCT COL_BAND) AS COL_BAND, COUNT(DISTINCT COL_MODE) AS COL_MODE
+                                       FROM `view_qso`    WHERE COL_CALL  NOT LIKE 'Y%'  GROUP BY COL_CALL ORDER BY nilai DESC")->result();
+
+            return $query;
+        }
+
+        public function get_search($call)
+        {
+            $query = $this->db->query("SELECT COL_PRIMARY_KEY,COL_CALL,COL_STATION_CALLSIGN,COL_BAND,COL_MODE,COL_RST_RCVD,COL_COUNTRY,COL_TIME_ON FROM `view_qso` WHERE COL_CALL ='$call'")->result();
+
+            return $query;
+        }
+
 
 }
 

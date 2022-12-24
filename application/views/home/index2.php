@@ -154,11 +154,11 @@
 						<div class="container" >	
 								<ul class="nav nav-tabs">
 											<li class="nav-item">
-											   <a class="nav-link active" data-target="#1"   data-toggle="tab">Indonesia</a>
+											   <a class="nav-link active" data-target="#1"   data-toggle="tab">YB-Land Chasers</a>
 											  
 											</li>
 											<li class="nav-item">
-												<a class="nav-link"  data-target="#2" data-toggle="tab">DX</a>
+												<a class="nav-link"  data-target="#2" data-toggle="tab">DX-Chasers</a>
 											</li>
 											
 								</ul>
@@ -171,32 +171,29 @@
 											<table id="indonesia" class="display" style="width:100%">
 											<thead>
 												<tr>
-													<th>Name</th>
-													<th>Position</th>
-													<th>Office</th>
-													<th>Age</th>
-													<th>Start date</th>
-													<th>Salary</th>
+													<th>Rank</th>
+													<th>Callsign</th>
+													<th>Point</th>
+													<th>QSO</th>
+													<th>Band</th>
+													<th>Mode</th>
+													<th>Details</th>
 												</tr>
 											</thead>
 											<tbody>
-
-												<tr>
-													<td>Michael Bruce</td>
-													<td>Javascript Developer</td>
-													<td>Singapore</td>
-													<td>29</td>
-													<td>2011-06-27</td>
-													<td>$183,000</td>
-												</tr>
-												<tr>
-													<td>Donna Snider</td>
-													<td>Customer Support</td>
-													<td>New York</td>
-													<td>27</td>
-													<td>2011-01-25</td>
-													<td>$112,000</td>
-												</tr>
+											
+													<?php  $i = 1;  foreach ($ybland as $row) { ?>
+														<tr>
+														<td><?php  echo $i++; ?></td>
+														<td><?php echo $row->COL_CALL; ?></td>
+														<td><?php echo $row->nilai; ?></td>
+														<td><?php echo $row->qso; ?></td>
+														<td><?php echo $row->COL_BAND; ?></td>
+														<td><?php echo $row->COL_MODE; ?></td>
+														<td><a  href="<?php echo site_url('search/get_log')."/".$row->COL_CALL; ?>">Details</td>
+														</tr>
+													<?php } ?>
+													
 											</tbody>
 											</table>
 										</div>
@@ -206,32 +203,28 @@
 											<table id="dx" class="display" style="width:100%">
 											<thead>
 												<tr>
-													<th>Name</th>
-													<th>Position</th>
-													<th>Office</th>
-													<th>Age</th>
-													<th>Start date</th>
-													<th>Salary</th>
+												<th>Rank</th>
+													<th>Callsign</th>
+													<th>Point</th>
+													<th>QSO</th>
+													<th>Band</th>
+													<th>Mode</th>
+													<th>Details</th>
 												</tr>
 											</thead>
 											<tbody>
 
-												<tr>
-													<td>Michael Bruce</td>
-													<td>Javascript Developer</td>
-													<td>Singapore</td>
-													<td>29</td>
-													<td>2011-06-27</td>
-													<td>$183,000</td>
-												</tr>
-												<tr>
-													<td>Donna Snider</td>
-													<td>Customer Support</td>
-													<td>New York</td>
-													<td>27</td>
-													<td>2011-01-25</td>
-													<td>$112,000</td>
-												</tr>
+											<?php  $i = 1;  foreach ($dxchasser as $row) { ?>
+														<tr>
+														<td><?php  echo $i++; ?></td>
+														<td><?php echo $row->COL_CALL; ?></td>
+														<td><?php echo $row->nilai; ?></td>
+														<td><?php echo $row->qso; ?></td>
+														<td><?php echo $row->COL_BAND; ?></td>
+														<td><?php echo $row->COL_MODE; ?></td>
+														<td><a  href="<?php echo site_url('search/get_log')."/".$row->COL_CALL; ?>">Details</td>
+														</tr>
+													<?php } ?>
 											</tbody>
 											</table>
 										</div>
@@ -370,8 +363,8 @@
 					</div>
 				</div>
 			</section> -->
-		</div>
+</div>
 
-<section>
+<!-- <section> -->
 
 	

@@ -9,9 +9,9 @@
 		<meta name="mobile-web-app-capable" content="yes"/>
 		<meta name="theme-color" content="#1a1a1a"/>
 		<meta http-equiv="X-AU-Compatible" content="IE=edge, chrome=1"/>
-		<meta name="title" content="IARU - 50th Anniversary"/>
-		<meta name="description" content="IARU - 50th Anniversary"/>
-		<meta name="author" content="Orari"/>
+		<meta name="title" content="8a138rds - 138th Raden Dewi Sartika"/>
+		<meta name="description" content="8a138rds - 138th Raden Dewi Sartika"/>
+		<meta name="author" content="Orari Daerah Jawa barat"/>
 		<meta name="robots" content="index, follow"/>
 		<meta name="googlebot" content="index, follow"/>
 		<meta name="google" content="notranslate"/>
@@ -83,15 +83,15 @@
 					</div>
 					<ul class="navbar-nav ml-auto align-items-center">
 						<li class="nav-item active">
-							<a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="<?php echo base_url(); ?>">Home <span class="sr-only">(current)</span></a>
 						</li>
 				
 						<li class="nav-item">
 							<a class="nav-link" href="#award">Award rules</a>
 						</li>
-						<li class="nav-item">
+						<!-- <li class="nav-item">
 							<a class="nav-link" href="#rangking">Rangking</a>
-						</li>
+						</li> -->
 						<!-- <li class="nav-item">
 							<a class="nav-link" href="#testimonial">Testimonial</a>
 						</li>

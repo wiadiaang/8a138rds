@@ -25,11 +25,11 @@
 				position: absolute;
 				width:100%;
 				padding-left: 10px;
-				margin-top: -232px;
+				margin-top: -9px;
 				background: rgba(255,255,255,0.8) !important
 			}
 			.data-left {
-				width:13%;
+				width:20%;
 				float: left;
 				font-family: Verdana, Geneva, sans-serif;
 				font-size: 14px;
@@ -38,7 +38,7 @@
 				padding-top: -70px
 			}
 			.data-right {
-				width: 86%;
+				width: 80%;
 				float: right;
 				padding-top: -70px
 			}
@@ -46,7 +46,7 @@
 				font-weight: bold;
 				font-family: Verdana, Geneva, sans-serif;
 				font-size: 14px;
-				width: 14%;
+				width: 19,5%;
 				float: left;
 				color: #333;
 				text-align: center
@@ -64,13 +64,13 @@
 
 		<div class="qsl">
 
-			<img src="<?php echo base_url(); ?>assets/images/QSLCard2.png"/>
+			<img src="<?php echo base_url(); ?>assets/images/eQSL.JPG"/>
 
 			<div class="data">
 
 				<div class="data-left">
 
-					<span>Callsign</span><br>
+					<!-- <span>Callsign</span><br> -->
 					<h4><?php echo $COL_CALL; ?></h4>
 
 				</div>
@@ -83,52 +83,52 @@
 
 					<div class="data-item">
 
-						<span>Date</span><br>
+						<!-- <span>Date</span><br> -->
 						<h4><?php echo $newDate; ?></h4>
 
 					</div>
 
 					<div class="data-item">
 
-						<span>Time</span><br>
+						<!-- <span>Time</span><br> -->
 						<h4><?php echo $newTime; ?></h4>
 
 					</div>
 
 					<div class="data-item">
 
-						<span>Band</span><br>
+						<!-- <span>Band</span><br> -->
 						<h4><?php echo $COL_BAND; ?></h4>
 
 					</div>
 
 					<div class="data-item">
 
-						<span>Mode</span><br>
+						<!-- <span>Mode</span><br> -->
 						<h4><?php echo $COL_MODE; ?></h4>
 
 					</div>
 
 					<div class="data-item">
 
-						<span>Received</span><br>
+						<!-- <span>Received</span><br> -->
 						<h4><?php echo $COL_RST_RCVD; ?></h4>
 
 					</div>
 
-					<div class="data-item">
+					<!-- <div class="data-item">
 
-						<span>Send</span><br>
-						<h4><?php echo $COL_RST_SENT; ?></h4>
+					
+						<h4><?php // echo $COL_RST_SENT; ?></h4>
 
-					</div>
+					</div> -->
 
-					<div class="data-item">
+					<!-- <div class="data-item"> -->
 
-						<span>Station</span><br>
-						<h4><?php echo $COL_STATION_CALLSIGN; ?></h4>
+						<!-- <span>Station</span><br> -->
+						<!-- <h4><?php // echo $COL_STATION_CALLSIGN; ?></h4> -->
 
-					</div>
+					<!-- </div> -->
 
 				</div>
 
