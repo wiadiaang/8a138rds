@@ -3,7 +3,7 @@
 
 	<head>
 
-		<title>THE IARU REGION 3 50th Anniversary <?php echo $title; ?></title>
+	<title>Dewi Sartika Award <?php echo $title; ?></title>
 
 		<style>
 
@@ -82,48 +82,20 @@
 
 		<div class="qsl">
 
-			<img class="center" src="<?php echo base_url(); ?>assets/images/The_IARU_Region_3_50th_Anniversary_Award_Silver.jpg"/>
+			<img class="center" src="<?php echo base_url(); ?>assets/images/rds_silver.jpg"/>
 
 			<div class="data">
 
 				<div class="data-callsign">
 
 					
-					<span><?php echo strtoupper(str_replace('0', 'Ø', $callsign));  ?></span>
+				<span><?php echo strtoupper($nama); ?>  -  <?php echo strtoupper(str_replace('0', 'Ø', $callsign));  ?></span>
 						
 				</div>
 
-				<div class="data-nama">
+				
 
-					<span><b><?php echo strtoupper($nama); ?></b></span>
-
-						
-				</div>
-
-					<div class="data-ranking">
-					<?php
-				 		
-						 $filearr = explode("-",$band);
-						 $filewithoutextension = $filearr[1];  
-						 $filewithoutextension_ = $filearr[2];  
-						 $m = substr($filewithoutextension_, -1);
-						 // $m = "Meters";
-						 $m = "Mixed";
-						 ?>
-					<!-- <span><?php echo strtoupper($endorsment); ?></span> -->
-					<span><?php echo str_replace("M","",$filewithoutextension_).' '.$m; ?> <?php echo strtoupper($filewithoutextension); ?></span>
-
-						
-				</div>
-
-
-						<div class="tanggal">
-					<span>Issued on <?php echo $tgl; ?></span>
-				</div>
-
-				<div class="nomor">
-					<span>No.<?php echo $nomor; ?>/IARU-R3-50th/2018</span>
-				</div>
+					
 
 			</div>
 

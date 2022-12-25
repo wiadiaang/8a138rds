@@ -1988,6 +1988,13 @@ class Logbook_model extends CI_Model {
             return $query;
         }
 
+        public function get_certificate($call)
+        {
+            $query = $this->db->query("CALL get_certificate('$call')")->result();
+
+            return $query;
+        }
+
 
 }
 

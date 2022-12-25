@@ -21,6 +21,7 @@ class Search extends CI_Controller {
         $this->load->model('logbook_model');
         $data['page_title'] =  $call ;
         $data['hasil'] = $this->logbook_model->get_search($call);
+        $data['certificate'] = $this->logbook_model->get_certificate($call);
         $data['callsign'] = $call; 
         $this->load->view('layout/header', $data);
 		$this->load->view('search/main',$data);
@@ -100,6 +101,190 @@ class Search extends CI_Controller {
         
         }
 
+    
+    public function getAwardBronze($callsign)
+    {
+        $this->load->model('logbook_model');
+        ini_set('memory_limit', '256M');
+        // load library
+        $this->load->library('pdf');
+        $pdf = $this->pdf->load();  
+        // $data['rangking'] = $rang;
+        $data['callsign'] = $callsign;
+        // $data['nama'] = $nama;
+        $data['action'] = site_url('search/bronze');
+        $data['image'] = "assets/images/rds_bronze.jpg";
+        $data['jns'] = "Congratulations you got the Bronze certificate";
+        // $data['jml'] = $rows;
+
+        $data['css'] = 'get_certificate.css';
+        $this->load->view('layout/header',$data);
+        $this->load->view('user/congratulations',$data);
+        $this->load->view('layout/footer');
+    }
+    public function getAwardSilver($callsign)
+    {
+        $this->load->model('logbook_model');
+        ini_set('memory_limit', '256M');
+        // load library
+        $this->load->library('pdf');
+        $pdf = $this->pdf->load();  
+        // $data['rangking'] = $rang;
+        $data['callsign'] = $callsign;
+        // $data['nama'] = $nama;
+        $data['action'] = site_url('search/silver');
+        $data['image'] = "assets/images/rds_silver.jpg";
+        $data['jns'] = "Congratulations you got the Silver certificate";
+        // $data['jml'] = $rows;
+
+        $data['css'] = 'get_certificate.css';
+        $this->load->view('layout/header',$data);
+        $this->load->view('user/congratulations',$data);
+        $this->load->view('layout/footer');
+    }
+    public function getAwardGold($callsign)
+    {
+        $this->load->model('logbook_model');
+        ini_set('memory_limit', '256M');
+        // load library
+        $this->load->library('pdf');
+        $pdf = $this->pdf->load();  
+        // $data['rangking'] = $rang;
+        $data['callsign'] = $callsign;
+        // $data['nama'] = $nama;
+        $data['action'] = site_url('search/gold');
+        $data['image'] = "assets/images/rds_gold.jpg";
+        $data['jns'] = "Congratulations you got the Gold certificate";
+        // $data['jml'] = $rows;
+
+        $data['css'] = 'get_certificate.css';
+        $this->load->view('layout/header',$data);
+        $this->load->view('user/congratulations',$data);
+        $this->load->view('layout/footer');
+    }
+    public function getAwardPlatinum($callsign)
+    {
+        $this->load->model('logbook_model');
+        ini_set('memory_limit', '256M');
+        // load library
+        $this->load->library('pdf');
+        $pdf = $this->pdf->load();  
+        // $data['rangking'] = $rang;
+        $data['callsign'] = $callsign;
+        // $data['nama'] = $nama;
+        $data['action'] = site_url('search/platinum');
+        $data['image'] = "assets/images/rds_platinum.jpg";
+        $data['jns'] = "Congratulations you got the Platinum certificate";
+        // $data['jml'] = $rows;
+
+        $data['css'] = 'get_certificate.css';
+        $this->load->view('layout/header',$data);
+        $this->load->view('user/congratulations',$data);
+        $this->load->view('layout/footer');
+    }
+    
+       //Untuk cetak certificate bronze per mode Dan Band
+    public function bronze(){
+        ini_set('memory_limit', '256M');
+        // load library
+        $this->load->library('certificate');
+        $this->load->model('logbook_model');
+        $pdf = $this->certificate->load();  
+
+        // var_dump($this->input->post('id_certificate'));die();
+        /*  $data['nama'] = $this->input->post('nama');*/
+        $data['callsign'] = $this->input->post('callsign');
+        $data['nama']  =  $this->input->post('nama');
+
+      
+        $data['image'] = "assets/images/rds_bronze.jpg";
+        $data['jns'] = "Congratulations you got the Bronze certificate";
+    
+
+        $html = $this->load->view('user/certificate_bronze',$data, true);
+            // render the view into HTML
+        $pdf->WriteHTML($html);
+            // write the HTML into the PDF
+            $output = 'certificate' .$this->input->post('callsign').'_'. date('Y_m_d_H_i_s') . '_.pdf';
+        $pdf->Output("$output", 'I');
+    } 
+
+          //Untuk cetak certificate bronze per mode Dan Band
+    public function silver(){
+            ini_set('memory_limit', '256M');
+            // load library
+            $this->load->library('certificate');
+            $this->load->model('logbook_model');
+            $pdf = $this->certificate->load();  
+    
+            // var_dump($this->input->post('id_certificate'));die();
+            /*  $data['nama'] = $this->input->post('nama');*/
+            $data['callsign'] = $this->input->post('callsign');
+            $data['nama']  =  $this->input->post('nama');
+    
+          
+            $data['image'] = "assets/images/rds_silver.jpg";
+            $data['jns'] = "Congratulations you got the Bronze certificate";
+        
+    
+            $html = $this->load->view('user/certificate_silver',$data, true);
+                // render the view into HTML
+            $pdf->WriteHTML($html);
+                // write the HTML into the PDF
+            $output = 'certificate' .$this->input->post('callsign').'_'. date('Y_m_d_H_i_s') . '_.pdf';
+            $pdf->Output("$output", 'I');
+    } 
+
+    public function gold(){
+        ini_set('memory_limit', '256M');
+        // load library
+        $this->load->library('certificate');
+        $this->load->model('logbook_model');
+        $pdf = $this->certificate->load();  
+
+        // var_dump($this->input->post('id_certificate'));die();
+        /*  $data['nama'] = $this->input->post('nama');*/
+        $data['callsign'] = $this->input->post('callsign');
+        $data['nama']  =  $this->input->post('nama');
+
+      
+        $data['image'] = "assets/images/rds_gold.jpg";
+        $data['jns'] = "Congratulations you got the Gold certificate";
+    
+
+        $html = $this->load->view('user/certificate_gold',$data, true);
+            // render the view into HTML
+        $pdf->WriteHTML($html);
+            // write the HTML into the PDF
+        $output = 'certificate' .$this->input->post('callsign').'_'. date('Y_m_d_H_i_s') . '_.pdf';
+        $pdf->Output("$output", 'I');
+    } 
+
+    public function platinum(){
+        ini_set('memory_limit', '256M');
+        // load library
+        $this->load->library('certificate');
+        $this->load->model('logbook_model');
+        $pdf = $this->certificate->load();  
+
+        // var_dump($this->input->post('id_certificate'));die();
+        /*  $data['nama'] = $this->input->post('nama');*/
+        $data['callsign'] = $this->input->post('callsign');
+        $data['nama']  =  $this->input->post('nama');
+
+      
+        $data['image'] = "assets/images/rds_platinum.jpg";
+        $data['jns'] = "Congratulations you got the Platinum certificate";
+    
+
+        $html = $this->load->view('user/certificate_platinum',$data, true);
+            // render the view into HTML
+        $pdf->WriteHTML($html);
+            // write the HTML into the PDF
+        $output = 'certificate' .$this->input->post('callsign').'_'. date('Y_m_d_H_i_s') . '_.pdf';
+        $pdf->Output("$output", 'I');
+} 
+    
     public function get_award()
     {
 
@@ -1297,7 +1482,7 @@ class Search extends CI_Controller {
     }
 
     //Untuk cetak certificate bronze per mode Dan Band
-    public function bronze($endorsment){
+    public function bronze1($endorsment){
         ini_set('memory_limit', '256M');
         // load library
         $this->load->library('certificate');
@@ -1366,7 +1551,7 @@ class Search extends CI_Controller {
     }
 
     //Untuk cetak certificate silver per mode Dan Band
-    public function silver($endorsment){
+    public function silver1($endorsment){
         ini_set('memory_limit', '256M');
         // load library
         $this->load->library('certificate');
@@ -1435,7 +1620,7 @@ class Search extends CI_Controller {
     }
 
     //Untuk cetak certificate gold per mode Dan Band
-    public function gold($endorsment){
+    public function gold1($endorsment){
             ini_set('memory_limit', '256M');
             // load library
             $this->load->library('certificate');

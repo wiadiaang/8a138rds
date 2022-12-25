@@ -79,7 +79,7 @@
 
 		<div class="qsl">
 
-			<img class="center" src="<?php echo base_url(); ?>assets/images/rds_gold.jpg"/>
+			<img class="center" src="<?php echo base_url(); ?>assets/images/rds_platinum.jpg"/>
 
 			<div class="data">
 
