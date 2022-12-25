@@ -8,6 +8,7 @@ class Search extends CI_Controller {
         $this->load->model('logbook_model');
         $call = $this->input->post('callsign');
         $data['hasil'] = $this->logbook_model->get_search($call);
+        $data['certificate'] = $this->logbook_model->get_certificate($call);
         $data['callsign'] = $call; 
         $data['page_title'] =  $call;
         $this->load->view('layout/header', $data);
